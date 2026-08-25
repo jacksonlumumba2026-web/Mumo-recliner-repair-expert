@@ -132,6 +132,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
   border-radius: 30px 30px 30px 100px;
   box-shadow: var(--shadow-lg);
   overflow: hidden;
+  background: var(--navy-panel);
 }
 
 /* ===== Slideshow (hero + service photos) ===== */
@@ -141,7 +142,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   opacity: 0;
   transition: opacity 1.4s ease;
 }
@@ -255,7 +256,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 }
 .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .service-photo { position: relative; }
-.service-photo .slideshow { width: 100%; height: 190px; overflow: hidden; }
+.service-photo .slideshow { width: 100%; height: 190px; overflow: hidden; background: #eef1f7; }
 .service-icon {
   position: absolute;
   bottom: -22px;
@@ -313,8 +314,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
   overflow: hidden;
   box-shadow: var(--shadow-md);
 }
-.ba-photo { position: relative; }
-.ba-photo img { width: 100%; height: 300px; object-fit: cover; }
+.ba-photo { position: relative; background: #eef1f7; }
+.ba-photo img { width: 100%; height: 300px; object-fit: contain; }
 .ba-tag {
   position: absolute;
   top: 16px;
