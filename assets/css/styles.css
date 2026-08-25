@@ -142,11 +142,12 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   opacity: 0;
   transition: opacity 1.4s ease;
 }
 .slideshow .slide.active { opacity: 1; z-index: 1; }
+.slideshow .slide.pos-top { object-position: top; }
 
 .quality-badge {
   position: absolute;
@@ -314,8 +315,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
   overflow: hidden;
   box-shadow: var(--shadow-md);
 }
-.ba-photo { position: relative; background: #eef1f7; }
-.ba-photo img { width: 100%; height: 300px; object-fit: contain; }
+.ba-photo { position: relative; }
+.ba-photo img { width: 100%; height: 300px; object-fit: cover; }
 .ba-tag {
   position: absolute;
   top: 16px;
