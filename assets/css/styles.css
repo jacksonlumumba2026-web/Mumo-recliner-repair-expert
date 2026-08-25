@@ -322,6 +322,125 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
   color: var(--gray);
 }
 
+/* ===== Scroll reveal ===== */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.in-view { opacity: 1; transform: none; }
+
+/* ===== FAQ ===== */
+.faq { padding: 70px 0; background: var(--white); }
+.faq-title { text-align: center; color: var(--ink); font-size: 1.7rem; font-weight: 700; margin-bottom: 40px; }
+.faq-list {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.faq-item {
+  border: 1px solid #e6e9f0;
+  border-radius: 14px;
+  padding: 18px 22px;
+  background: #fbfcfe;
+}
+.faq-item summary {
+  cursor: pointer;
+  font-family: var(--font-head);
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 1rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+.faq-item[open] summary::after { content: '\2212'; }
+.faq-item p { margin-top: 14px; color: var(--gray); font-size: 0.92rem; line-height: 1.65; }
+
+/* ===== Quote section ===== */
+.quote-section { padding: 70px 0 80px; background: #f4f6fb; }
+.quote-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: stretch;
+}
+.quote-title { color: var(--ink); font-size: 1.7rem; font-weight: 700; margin: 6px 0 12px; }
+.quote-copy { color: var(--gray); font-size: 0.94rem; margin-bottom: 26px; max-width: 480px; }
+.quote-form { display: flex; flex-direction: column; gap: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.quote-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.84rem;
+  color: var(--ink);
+}
+.quote-form input,
+.quote-form select,
+.quote-form textarea {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--ink);
+  padding: 12px 14px;
+  border: 1.5px solid #d8dce6;
+  border-radius: 10px;
+  background: var(--white);
+  resize: vertical;
+}
+.quote-form input:focus,
+.quote-form select:focus,
+.quote-form textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+.btn-submit {
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #25d366, #1aa64f);
+  color: var(--white);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.98rem;
+  border: none;
+  padding: 15px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-submit:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(37, 211, 102, 0.45); }
+.btn-submit svg { width: 20px; height: 20px; fill: var(--white); stroke: none; }
+
+.quote-map {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  min-height: 320px;
+}
+.quote-map iframe { width: 100%; height: 100%; min-height: 320px; border: 0; display: block; }
+
 /* ===== Contact bar ===== */
 .contact-bar { background: var(--blue-deep); }
 .contact-bar-inner {
@@ -416,6 +535,9 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
   .trust-grid { grid-template-columns: 1fr; gap: 22px; }
   .services-grid { grid-template-columns: 1fr; }
   .ba-grid { grid-template-columns: 1fr; }
+  .quote-grid { grid-template-columns: 1fr; }
+  .quote-map { min-height: 260px; }
+  .form-row { grid-template-columns: 1fr; }
   .contact-bar-inner { flex-direction: column; gap: 18px; }
   .contact-divider { display: none; }
 }
