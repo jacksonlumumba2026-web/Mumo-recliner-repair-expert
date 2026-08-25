@@ -20,6 +20,20 @@ document.addEventListener('DOMContentLoaded', function () {
     revealEls.forEach(function (el) { el.classList.add('in-view'); });
   }
 
+  // Photo slideshows (hero + service cards)
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.slideshow').forEach(function (show) {
+    var slides = show.querySelectorAll('.slide');
+    if (slides.length < 2 || reduceMotion) return;
+    var interval = parseInt(show.getAttribute('data-interval'), 10) || 4000;
+    var current = 0;
+    setInterval(function () {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, interval);
+  });
+
   // Quote form -> pre-filled WhatsApp message
   var quoteForm = document.getElementById('quote-form');
   if (quoteForm) {
